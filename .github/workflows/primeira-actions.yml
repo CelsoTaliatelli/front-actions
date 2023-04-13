@@ -16,3 +16,6 @@ jobs:
       #run echo
       - name: Run a one-line script
         run: echo Hello, world!
+      
+      - name: Run a list file command
+        run: ls -la
