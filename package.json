@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
-    "build":"rm -rf build && next build && next export && mv ./out ./build",
+    "build": "rm -rf build && next build && next export && mv ./out ./build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix":"next lint --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,12 @@
     "next": "^13.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.7"
   }
 }
