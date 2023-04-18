@@ -1,0 +1,20 @@
+name: "CD (Entrega Continua): Main WOrkflow"
+
+env:
+    VERCEL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+    VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+
+on:
+    push:
+        branches: [main]
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/checkout@v3
+            - name: Run Installation
+              run: npm install
+            - name: Run deploy
+              run: npm run deploy:prod      
+            
