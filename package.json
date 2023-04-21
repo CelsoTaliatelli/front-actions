@@ -1,6 +1,6 @@
 {
   "name": "actions-front",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,16 +10,17 @@
     "build": "rm -rf build && next build && next export && mv ./out ./build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix":"next lint --fix",
-    "deploy:prod":"npm run deploy:staging --prod",
-    "deploy:staging":"npm run build && npx vercel ./build --yes --token=$VERCEL_TOKEN",
-    "deploy:preview":"node ./scripts/pullRequestPreview.js"
+    "lint:fix": "next lint --fix",
+    "deploy:prod": "npm run deploy:staging --prod",
+    "deploy:staging": "npm run build && npx vercel ./build --yes --token=$VERCEL_TOKEN",
+    "deploy:preview": "node ./scripts/pullRequestPreview.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "next": "^13.3.0",
+    "node-fetch": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
