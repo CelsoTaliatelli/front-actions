@@ -27,7 +27,7 @@ defaultHeaders["content-type"] = "apllication/json";
 
 
 
-fetch(`https://api.github.com/respos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments` , {
+fetch(`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comment` , {
     headers: defaultHeaders,
     method: "POST",
     body: JSON.stringify({
