@@ -20,6 +20,23 @@ jobs:
               run: npm install
             - name: Run Linter
               run: npm run lint 
+    test_e2e:
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+            with:
+              node-version: 16.13.0
+              cache: 'npm'
+          - name: Cypress run
+            uses: cypress-io/github-action@v4
+            with:
+              browser: chrome
+          - name: Run Installation
+            run: npm install
+          - name: Run test
+            run: npm run test:e2e
+
     preview:
         runs-on: ubuntu-latest
         steps:
@@ -27,4 +44,4 @@ jobs:
             - name: Run Installation
               run: npm install
             - name: Run Preview Deployment
-              run:  npm run deploy:preview 
+              run:  npm run deploy:preview
